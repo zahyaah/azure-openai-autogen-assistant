@@ -58,9 +58,3 @@ AZURE_OPENAI_EMBEDDING_DEPLOYMENT=
 ```bash
 python main.py 
 ```
-
-You should see: 
-```bash
-Paris 
-New Delhi
-```
