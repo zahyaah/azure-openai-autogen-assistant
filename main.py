@@ -18,16 +18,16 @@ async def main():
         api_version=os.getenv("AZURE_OPENAI_API_VERSION"),
         api_key=os.getenv("AZURE_OPENAI_KEY"),
         azure=True
-    ) # brain
+    ) 
 
-    assistant = AssistantAgent(name='assistant', model_client=model_client, description='a basic first agent') # giving a "human", the above brain
+    assistant = AssistantAgent(name='assistant', model_client=model_client, description='a basic first agent')
 
-    result1 = await assistant.run(task="what's the capital of france?")
-    print(result1.messages[-1].content)
+    result1 = await assistant.run(task="what's the name of the actor who played Sonny in the movie Bronx Tale?")
+    print(result1.messages[-1])
 
 
-    result2 = await assistant.run(task="what's the capital of india?")
-    print(result2.messages[-1].content)
+    result2 = await assistant.run(task="who was the protagonist in the movie scarface?")
+    print(result2.messages[-1])
 
     await model_client.close()
 
